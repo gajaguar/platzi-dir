@@ -1,0 +1,30 @@
+{
+  "name": "platzi-dir",
+  "version": "0.1.0",
+  "description": "A GraphQL learning project by Platzi.",
+  "private": false,
+  "main": "index.js",
+  "type": "module",
+  "keywords": [
+    "api",
+    "node",
+    "graphql",
+    "platzi"
+  ],
+  "author": "G.A.JAGUAR <dev.gajaguar@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gajaguar/platzi-dir.git"
+  },
+  "homepage": "https://github.com/gajaguar/platzi-dir#readme",
+  "bugs": {
+    "url": "https://github.com/gajaguar/platzi-dir.git/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "graphql": "15"
+  }
+}
