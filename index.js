@@ -41,7 +41,7 @@ app.use('/api', graphqlHTTP({
  * Raise the server.
  */
 app.listen(port, () => {
-	console.log(`Server is listening at http://localhost:${port}/api`)
+	console.log(`[platzi-dir] Server is listening at http://localhost:${port}/api`)
 })
 
 /**
