@@ -1,10 +1,9 @@
 'use strict'
 
 import express from 'express'
-import { join } from 'path'
+import { getContentOf } from './utils'
 import { graphql, buildSchema } from 'graphql'
 import { graphqlHTTP } from 'express-graphql'
-import { readFileSync } from 'fs'
 
 /**
  * Root path.
@@ -25,9 +24,7 @@ const port = process.env.PORT || 3000
 /**
  * Define the schema.
  */
-const schema = buildSchema(
-  readFileSync(join(__root, 'lib', 'schema.graphql'), 'utf-8')
-)
+const schema = buildSchema(getContentOf('./lib/schema.graphql'))
 
 /**
  * Setup resolvers.
