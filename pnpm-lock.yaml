@@ -6,6 +6,7 @@ specifiers:
   express-graphql: ^0.12.0
   graphql: '15'
   nodemon: ^2.0.15
+  prettier: ^2.5.1
 
 dependencies:
   express: 4.17.2
@@ -15,6 +16,7 @@ dependencies:
 devDependencies:
   eslint: 8.8.0
   nodemon: 2.0.15
+  prettier: 2.5.1
 
 packages:
 
@@ -1155,6 +1157,12 @@ packages:
   /prepend-http/2.0.0:
     resolution: {integrity: sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=}
     engines: {node: '>=4'}
+    dev: true
+
+  /prettier/2.5.1:
+    resolution: {integrity: sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
     dev: true
 
   /proxy-addr/2.0.7:
