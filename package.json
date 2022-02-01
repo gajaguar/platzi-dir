@@ -22,6 +22,7 @@
     "url": "https://github.com/gajaguar/platzi-dir.git/issues"
   },
   "scripts": {
+    "dev": "nodemon -e js,graphql, index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
