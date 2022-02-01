@@ -23,8 +23,7 @@
   },
   "scripts": {
     "dev": "nodemon --experimental-specifier-resolution=node -e js,graphql index",
-    "lint:js": "eslint --ext \".js\" --ignore-path .gitignore .",
-    "lint": "pnpm run lint:js",
+    "lint": "eslint --ext \".js\" --ignore-path .gitignore .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
