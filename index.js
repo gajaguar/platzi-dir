@@ -1,8 +1,8 @@
 'use strict'
 
 import express from 'express'
+import { buildSchema } from 'graphql'
 import { getContentOf } from './utils'
-import { graphql, buildSchema } from 'graphql'
 import { graphqlHTTP } from 'express-graphql'
 import { resolvers } from './lib/resolvers'
 
@@ -44,14 +44,3 @@ app.listen(port, () => {
     `[platzi-dir] Server is listening at http://localhost:${port}/api`
   )
 })
-
-/**
- * Execute `hello` query
- */
-graphql(schema, '{ hello }', resolvers)
-  .then((data) => {
-    console.dir(data)
-  })
-  .catch((error) => {
-    console.error(error)
-  })
