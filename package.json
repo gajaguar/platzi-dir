@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "description": "A GraphQL learning project by Platzi.",
   "private": false,
-  "main": "index.js",
   "type": "module",
+  "main": "index.js",
   "keywords": [
     "api",
     "node",
@@ -22,7 +22,7 @@
     "url": "https://github.com/gajaguar/platzi-dir.git/issues"
   },
   "scripts": {
-    "dev": "nodemon -e js,graphql, index",
+    "dev": "nodemon --experimental-specifier-resolution=node -e js,graphql index",
     "lint:js": "eslint --ext \".js\" --ignore-path .gitignore .",
     "lint": "pnpm run lint:js",
     "test": "echo \"Error: no test specified\" && exit 1"
