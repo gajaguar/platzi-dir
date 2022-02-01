@@ -4,6 +4,7 @@ import express from 'express'
 import { getContentOf } from './utils'
 import { graphql, buildSchema } from 'graphql'
 import { graphqlHTTP } from 'express-graphql'
+import { resolvers } from './lib/resolvers'
 
 /**
  * Root path.
@@ -25,14 +26,6 @@ const port = process.env.PORT || 3000
  * Define the schema.
  */
 const schema = buildSchema(getContentOf('./lib/schema.graphql'))
-
-/**
- * Setup resolvers.
- * Must be named same as query.
- */
-const resolvers = {
-  hello: () => 'Hello World',
-}
 
 app.use(
   '/api',
