@@ -12,9 +12,17 @@ const schema = buildSchema(`
 `)
 
 /**
+ * Setup resolvers.
+ * Must be named same as query.
+ */
+const resolvers = {
+	hello: () => 'Hello World'
+}
+
+/**
  * Execute `hello` query
  */
-graphql(schema, '{ hello }')
+graphql(schema, '{ hello }', resolvers)
 	.then((data) => {
 		console.dir(data)
 	})
