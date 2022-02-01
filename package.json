@@ -23,6 +23,8 @@
   },
   "scripts": {
     "dev": "nodemon -e js,graphql, index",
+    "lint:js": "eslint --ext \".js\" --ignore-path .gitignore .",
+    "lint": "pnpm run lint:js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
