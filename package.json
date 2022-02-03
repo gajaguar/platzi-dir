@@ -24,6 +24,7 @@
   "scripts": {
     "dev": "nodemon --experimental-specifier-resolution=node -e js,graphql index",
     "lint": "eslint --ext \".js\" --ignore-path .gitignore .",
+    "start": "NODE_ENV=production node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
