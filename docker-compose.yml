@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    image: ${APP_NAME}:development
+    container_name: ${APP_NAME}-dev
+    volumes:
+      - .:/app
+    ports:
+      - ${APP_PORT}:${APP_PORT}
+    depends_on:
+      - db
+    command:
+      - "yarn"
+      - "dev"
+
+  db:
+    image: mongo:latest
+    container_name: ${APP_NAME}-db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${DB_USER}
+      - MONGO_INITDB_ROOT_PASSWORD=${DB_PASSWORD}
+      - MONGO_INITDB_DATABASE=${DB_NAME}
+    ports:
+      - ${DB_PORT}:27017
