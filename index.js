@@ -1,16 +1,10 @@
 'use strict'
 
 import express from 'express'
-import { buildSchema } from 'graphql'
-import { getContentOf } from './utils'
 import { graphqlHTTP } from 'express-graphql'
+import { makeExecutableSchema } from '@graphql-tools/schema'
 import { resolvers } from './lib/resolvers'
-
-/**
- * Root path.
- * @constant {string}
- */
-const { pathname: __root } = new URL('./', import.meta.url)
+import { getContentOf } from './utils'
 
 /**
  * Express application.
@@ -23,9 +17,14 @@ const app = express()
 const port = process.env.PORT || 3000
 
 /**
- * Define the schema.
+ * GraphQL schema.
  */
-const schema = buildSchema(getContentOf('./lib/schema.graphql'))
+const typeDefs = getContentOf('./lib/schema.graphql')
+
+/**
+ * Executable GraphQL schema.
+ */
+const schema = makeExecutableSchema({ typeDefs, resolvers })
 
 app.use(
   '/api',
