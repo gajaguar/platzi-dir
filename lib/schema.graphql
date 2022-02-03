@@ -5,12 +5,12 @@ type Course {
   """
   The ID of the course.
   """
-  _id: ID
+  _id: ID!
 
   """
   The title of the course.
   """
-  title: String
+  title: String!
 
   """
   The description of the course.
