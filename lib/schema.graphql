@@ -6,18 +6,22 @@ type Course {
   The ID of the course.
   """
   _id: ID
+
   """
   The title of the course.
   """
   title: String
+
   """
   The description of the course.
   """
   teacher: String
+
   """
   The description of the course.
   """
   description: String
+
   """
   The theme or keyword of the course.
   """
@@ -32,4 +36,9 @@ type Query {
   Retrieve all courses.
   """
   getCourses: [Course]
+
+  """
+  Retrieve a course by its ID.
+  """
+  getCourse(id: ID!): Course
 }
