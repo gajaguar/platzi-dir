@@ -1,11 +1,35 @@
+"""
+Type representing a course.
+"""
 type Course {
+  """
+  The ID of the course.
+  """
   _id: ID
+  """
+  The title of the course.
+  """
   title: String
+  """
+  The description of the course.
+  """
   teacher: String
+  """
+  The description of the course.
+  """
   description: String
+  """
+  The theme or keyword of the course.
+  """
   topic: String
 }
 
+"""
+Query root for the GraphQL schema.
+"""
 type Query {
+  """
+  Retrieve all courses.
+  """
   getCourses: [Course]
 }
