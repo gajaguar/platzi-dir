@@ -48,9 +48,8 @@ class Configuration {
   /**
    * Obtain the database name.
    * @returns {string} - The database name.
-   * @private
    */
-  #DB_NAME = process.env.DB_NAME || 'myDatabase'
+  DB_NAME = process.env.DB_NAME || 'myDatabase'
 
   /**
    * Obtain the database host.
@@ -72,7 +71,7 @@ class Configuration {
    */
   DB_CONNECTION_STRING = `mongodb://${this.#DB_USER}:${this.#DB_PASSWORD}@${
     this.#DB_HOST
-  }:${this.#DB_PORT}/${this.#DB_NAME}`
+  }:${this.#DB_PORT}/${this.DB_NAME}`
 
   /**
    * Find the root path.
