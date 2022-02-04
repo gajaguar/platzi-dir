@@ -5,7 +5,7 @@ import { settings } from '../core'
 /**
  * Add mocked data to the database.
  */
-export const populate = async () => {
+export const populateDatabase = async () => {
   const dbConnetion = await getDbConnection()
   const collection = dbConnetion.collection('courses')
   const options = { ordered: true }
