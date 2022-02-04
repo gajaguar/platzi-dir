@@ -91,4 +91,8 @@ class Configuration {
   }
 }
 
+/**
+ * Instance of the application configuration.
+ * @type {Configuration} - The application configuration.
+ */
 export const settings = new Configuration()
