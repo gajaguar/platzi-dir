@@ -71,7 +71,7 @@ class Configuration {
    */
   DB_CONNECTION_STRING = `mongodb://${this.#DB_USER}:${this.#DB_PASSWORD}@${
     this.#DB_HOST
-  }:${this.#DB_PORT}/${this.DB_NAME}`
+  }:${this.#DB_PORT}`
 
   /**
    * Find the root path.
