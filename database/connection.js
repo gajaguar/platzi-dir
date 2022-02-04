@@ -1,36 +1,32 @@
 import { MongoClient } from 'mongodb'
 import { settings } from '../core/'
 
-const {
-  APP_NAME: appName,
-  DB_CONNECTION_STRING: mongoUri,
-  DB_NAME: dbName,
-} = settings
-
 /**
  * Database connection store.
  * @type {Object} - Database connection.
  */
-let connection = null
+let database = null
 
 /**
  * Attempt to connect to the database.
  * @returns {Promise} - Promise of the database connection.
  */
 export const getDbConnection = async () => {
-  if (connection) return connection
-  let client = null
+  if (database) return database
+  const { APP_NAME, DB_CONNECTION_STRING, DB_NAME } = settings
   try {
-    client = await MongoClient.connect(mongoUri, {
+    const client = new MongoClient(DB_CONNECTION_STRING, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
-    connection = client.db(dbName)
+    await client.connect()
+    database = client.db(DB_NAME)
+    console.log(`[${APP_NAME}] Connected to the database.`)
   } catch (error) {
-    console.error(`[${appName}] ${error.message}`)
+    console.error(`[${APP_NAME}] ${error.message}`)
 
     throw error
   }
 
-  return connection
+  return database
 }
