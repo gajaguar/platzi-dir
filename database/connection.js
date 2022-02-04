@@ -17,11 +17,11 @@ let connection = null
  * Attempt to connect to the database.
  * @returns {Promise} - Promise of the database connection.
  */
-export const getDbConnection = () => {
+export const getDbConnection = async () => {
   if (connection) return connection
   let client = null
   try {
-    client = MongoClient.connect(mongoUri, {
+    client = await MongoClient.connect(mongoUri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
