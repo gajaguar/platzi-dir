@@ -5,7 +5,7 @@ import express from 'express'
 import { graphqlHTTP } from 'express-graphql'
 import { settings } from './core'
 import { resolvers } from './lib/resolvers'
-import { getContentOf } from './utils'
+import { getContentOf, log } from './utils'
 
 /**
  * Express application.
@@ -41,10 +41,10 @@ app.use(
  * @returns {Function} - The start up message.
  */
 const showStarupMessage = () => {
-  const { APP_NAME, APP_HOST, APP_PORT, APP_ENV } = settings
-  const message = `[${APP_NAME}] application is running on http://${APP_HOST}:${APP_PORT} in ${APP_ENV} mode`
+  const { APP_HOST, APP_PORT, APP_ENV } = settings
+  const message = `application is running on http://${APP_HOST}:${APP_PORT} in ${APP_ENV} mode`
 
-  return console.log(message)
+  return log.info(message)
 }
 
 /**
