@@ -1,3 +1,5 @@
+'use strict'
+
 import { MongoClient } from 'mongodb'
 import { settings } from '../core/'
 import { log } from '../utils'
@@ -24,9 +26,9 @@ export const getDbConnection = async () => {
     database = client.db(DB_NAME)
     log.info('Connected to the database.')
   } catch (error) {
-    log.error(`${error.message}`)
+    log.error(`getDbConnection - ${error.message}`)
 
-    throw error
+    process.exit(1)
   }
 
   return database
