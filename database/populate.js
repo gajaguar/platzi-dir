@@ -14,7 +14,7 @@ export const populateDatabase = async () => {
     const result = await collection.insertMany(courses, options)
     log.info(`${result.insertedCount} courses were added to the database.`)
   } catch (error) {
-    log.error(`${error.message}`)
+    log.error(`populateDatabase - ${error.message}`)
 
     throw error
   }

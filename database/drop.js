@@ -10,9 +10,9 @@ export const dropDatabase = async () => {
   try {
     const dbConnetion = await getDbConnection()
     dbConnetion.dropDatabase()
-    log.info('the database was dropped.')
+    log.info('The database was dropped.')
   } catch (error) {
-    log.error(`${error.message}`)
+    log.error(`dropDatabase - ${error.message}`)
 
     throw error
   }
