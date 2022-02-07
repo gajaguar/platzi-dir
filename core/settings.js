@@ -29,7 +29,7 @@ class Configuration {
    * Obtain the application environment.
    * @returns {string} - The application environment.
    */
-  APP_ENV = process.env.APP_ENV || 'development'
+  APP_ENV = process.env.NODE_ENV || process.env.APP_ENV || 'development'
 
   /**
    * Obtain the database user name.
