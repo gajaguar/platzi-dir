@@ -15,11 +15,11 @@ let database = null
 export const getDbConnection = async () => {
   if (database) return database
   const { DB_CONNECTION_STRING, DB_NAME } = settings
+  const client = new MongoClient(DB_CONNECTION_STRING, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   try {
-    const client = new MongoClient(DB_CONNECTION_STRING, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    })
     await client.connect()
     database = client.db(DB_NAME)
     log.info('Connected to the database.')
