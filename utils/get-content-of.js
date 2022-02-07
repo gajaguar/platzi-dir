@@ -9,7 +9,6 @@ import { settings } from '../core'
  */
 export const getContentOf = (filePath) => {
   const basePath = settings.ROOT_DIR
-  console.log('DEBUG:', basePath)
   const fullPath = join(basePath, filePath)
   const content = readFileSync(fullPath, 'utf-8')
 
