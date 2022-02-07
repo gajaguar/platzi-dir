@@ -1,16 +1,16 @@
 'use strict'
 
-import { settings } from '../core'
 import { dropDatabase, populateDatabase } from '.'
+import { settings } from '../core'
 
 const { DB_RESET } = settings
 
 /**
  * Reset the database if the `DB_RESET` setting is true.
  */
-export const resetDatabase = () => {
+export const resetDatabase = async () => {
   if (DB_RESET) {
-    dropDatabase()
-    populateDatabase()
+    await dropDatabase()
+    await populateDatabase()
   }
 }
