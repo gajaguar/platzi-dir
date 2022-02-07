@@ -17,7 +17,8 @@ class Logger {
    * @param {string} message - Message to log.
    */
   error(message) {
-    console.error(`[${this.#appName}] error: ${message}`)
+    const dateTime = new Date().toISOString()
+    console.error(`[${this.#appName}] ${dateTime} Error: ${message}`)
   }
 
   /**
@@ -25,7 +26,8 @@ class Logger {
    * @param {string} message - Message to log.
    */
   info(message) {
-    console.info(`[${this.#appName}] info: ${message}`)
+    const dateTime = new Date().toISOString()
+    console.info(`[${this.#appName}] ${dateTime} ${message}`)
   }
 }
 
