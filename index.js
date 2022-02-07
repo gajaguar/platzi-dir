@@ -4,6 +4,7 @@ import { makeExecutableSchema } from '@graphql-tools/schema'
 import express from 'express'
 import { graphqlHTTP } from 'express-graphql'
 import { settings } from './core'
+import { resetDatabase } from './database'
 import { resolvers } from './lib/resolvers'
 import { getContentOf, showStarupMessage } from './utils'
 
@@ -11,6 +12,11 @@ import { getContentOf, showStarupMessage } from './utils'
  * Setup port for application.
  */
 const { APP_PORT } = settings
+
+/**
+ * Reset the database according to the settings.
+ */
+resetDatabase()
 
 /**
  * Express application.
