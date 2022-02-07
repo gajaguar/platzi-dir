@@ -66,6 +66,13 @@ class Configuration {
   #DB_PORT = Number(process.env.DB_PORT) || 57017
 
   /**
+   * Determine if the database must be reseted.
+   * Void string is considered as false.
+   * @returns {boolean} - True if the database must be reseted.
+   */
+  DB_RESET = process.env.DB_RESET.toLowerCase() === 'true' ? true : false
+
+  /**
    * Obtain the database connection string.
    * @returns {string} - The database connection string.
    */
