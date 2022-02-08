@@ -8,8 +8,8 @@ import { getDatabase } from './'
  */
 export const populateDatabase = async () => {
   try {
-    const dbConnetion = await getDatabase()
-    const collection = dbConnetion.collection('courses')
+    const database = await getDatabase()
+    const collection = database.collection('courses')
     const options = { ordered: true }
     const result = await collection.insertMany(courses, options)
     log.info(`${result.insertedCount} courses were added to the database.`)

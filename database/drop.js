@@ -8,8 +8,8 @@ import { getDatabase } from './'
  */
 export const dropDatabase = async () => {
   try {
-    const dbConnetion = await getDatabase()
-    dbConnetion.dropDatabase()
+    const database = await getDatabase()
+    database.dropDatabase()
     log.info('The database was dropped.')
   } catch (error) {
     log.error(`dropDatabase - ${error.message}`)
