@@ -4,7 +4,6 @@
  */
 export const courses = [
   {
-    _id: '61f9af83fc13ae16f6000000',
     title: 'Fear',
     teacher: 'Philip Pittham',
     description:
@@ -12,7 +11,6 @@ export const courses = [
     topic: 'Let it Rain (Parlez-moi de la pluie)',
   },
   {
-    _id: '61f9af83fc13ae16f6000001',
     title: 'Battlefield Baseball (Jigoku kôshien)',
     teacher: 'Octavia Brett',
     description:
@@ -20,7 +18,6 @@ export const courses = [
     topic: 'Endless Love',
   },
   {
-    _id: '61f9af83fc13ae16f6000002',
     title: 'Continental Divide',
     teacher: 'Helene Paul',
     description:
