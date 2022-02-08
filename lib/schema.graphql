@@ -28,6 +28,28 @@ type Course {
   topic: String
 }
 
+input CourseCreate {
+  """
+  The title of the course.
+  """
+  title: String!
+
+  """
+  The description of the course.
+  """
+  teacher: String
+
+  """
+  The description of the course.
+  """
+  description: String
+
+  """
+  The theme or keyword of the course.
+  """
+  topic: String
+}
+
 """
 Query root for the GraphQL schema.
 """
@@ -41,4 +63,14 @@ type Query {
   Retrieve a course by its ID.
   """
   getCourse(id: ID!): Course
+}
+
+"""
+Mutation root for the GraphQL schema.
+"""
+type Mutation {
+  """
+  Create a new course.
+  """
+  createCourse(course: CourseCreate!): Course
 }
