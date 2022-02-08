@@ -1,4 +1,5 @@
 export * from './courses-mock'
+export * from './default-course'
 export * from './get-content-of'
 export * from './logger'
 export * from './show-startup-message'
