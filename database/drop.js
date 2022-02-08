@@ -1,14 +1,14 @@
 'use strict'
 
 import { log } from '../utils'
-import { getDbConnection } from './'
+import { getDatabase } from './'
 
 /**
  * Drop the database.
  */
 export const dropDatabase = async () => {
   try {
-    const dbConnetion = await getDbConnection()
+    const dbConnetion = await getDatabase()
     dbConnetion.dropDatabase()
     log.info('The database was dropped.')
   } catch (error) {

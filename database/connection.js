@@ -14,7 +14,7 @@ let database = null
  * Attempt to connect to the database.
  * @returns {Promise} - Promise of the database connection.
  */
-export const getDbConnection = async () => {
+export const getDatabase = async () => {
   if (database) return database
   const { DB_CONNECTION_STRING, DB_NAME } = settings
   const client = new MongoClient(DB_CONNECTION_STRING, {
@@ -26,7 +26,7 @@ export const getDbConnection = async () => {
     database = client.db(DB_NAME)
     log.info('Connected to the database.')
   } catch (error) {
-    log.error(`getDbConnection - ${error.message}`)
+    log.error(`getDatabase - ${error.message}`)
 
     process.exit(1)
   }

@@ -1,14 +1,14 @@
 'use strict'
 
 import { courses, log } from '../utils'
-import { getDbConnection } from './'
+import { getDatabase } from './'
 
 /**
  * Add mocked data to the database.
  */
 export const populateDatabase = async () => {
   try {
-    const dbConnetion = await getDbConnection()
+    const dbConnetion = await getDatabase()
     const collection = dbConnetion.collection('courses')
     const options = { ordered: true }
     const result = await collection.insertMany(courses, options)
